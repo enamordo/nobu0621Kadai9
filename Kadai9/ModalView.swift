@@ -14,19 +14,19 @@ struct ModalView: View {
     var body: some View {
         ZStack {
             Color.gray
-                .frame(height: 120)
+                .frame(height: 100)
                 .opacity(0.1)
                 .ignoresSafeArea()
-            HStack(alignment: .center) {
+            HStack {
                 Button("Cancel") {
                     isModal = false
                 }
-                .offset(y: -40)
+                .offset(y: -30)
                 .padding()
                 Spacer()
             }
         }
-        VStack(spacing: 20) {
+        VStack(spacing: 30) {
             Button("東京都") {
                 selectedPrefecture = "東京都"
             }
@@ -40,7 +40,6 @@ struct ModalView: View {
                 selectedPrefecture = "千葉県"
             }
         }
-        .offset(y: -20)
         Spacer()
     }
 }

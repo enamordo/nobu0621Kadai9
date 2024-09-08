@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @State private var selectedPrefecture = "未選択"
     @State private var isModal = false
-
+    
     var body: some View {
         VStack {
             HStack {
@@ -23,9 +23,15 @@ struct ContentView: View {
                 }, label: {
                     Text("入力")
                 })
-                .fullScreenCover(isPresented: $isModal, content: {
-                    ModalView(isModal: $isModal, selectedPrefecture: $selectedPrefecture)
-                })
+                .fullScreenCover(
+                    isPresented: $isModal,
+                    content: {
+                        ModalView(
+                            isModal: $isModal,
+                            selectedPrefecture: $selectedPrefecture
+                        )
+                    }
+                )
             }
             Spacer()
         }

@@ -11,6 +11,8 @@ struct ModalView: View {
     @Binding var isModal: Bool
     @Binding var selectedPrefecture: String
 
+    let prefectures = ["東京都", "神奈川県", "埼玉県", "千葉県"]
+
     var body: some View {
         ZStack {
             Color.gray
@@ -27,21 +29,13 @@ struct ModalView: View {
             }
         }
         VStack(spacing: 30) {
-            Button("東京都") {
-                selectedPrefecture = "東京都"
-                isModal = false
-            }
-            Button("神奈川県") {
-                selectedPrefecture = "神奈川県"
-                isModal = false
-            }
-            Button("埼玉県") {
-                selectedPrefecture = "埼玉県"
-                isModal = false
-            }
-            Button("千葉県") {
-                selectedPrefecture = "千葉県"
-                isModal = false
+            ForEach(prefectures, id: \.self) { prefecture in
+                Button(action: {
+                    selectedPrefecture = prefecture
+                    isModal = false
+                }) {
+                    Text(prefecture)
+                }
             }
         }
         Spacer()

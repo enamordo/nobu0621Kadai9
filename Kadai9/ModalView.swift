@@ -29,15 +29,19 @@ struct ModalView: View {
         VStack(spacing: 30) {
             Button("東京都") {
                 selectedPrefecture = "東京都"
+                isModal = false
             }
             Button("神奈川県") {
                 selectedPrefecture = "神奈川県"
+                isModal = false
             }
             Button("埼玉県") {
                 selectedPrefecture = "埼玉県"
+                isModal = false
             }
             Button("千葉県") {
                 selectedPrefecture = "千葉県"
+                isModal = false
             }
         }
         Spacer()
